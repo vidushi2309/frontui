@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registered Events</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="Dashboard.html">Dashboard</a></li>
+        <li><a href="events.html">Upcoming Events</a></li>
+        <li><a href="performance.html">Performance</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="assistance.html">Request Assistance</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="training-schedule.html">Training Schedule</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Registered Events</h1>
+    <input
+      type="text"
+      id="searchBar"
+      placeholder="Search Events by Name"
+      oninput="filterEvents()"
+    />
+
+    <section id="eventTiles" class="event-grid">
+      <!-- Event tiles dynamically generated -->
+    </section>
+
+    <div id="registrationModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-button" onclick="closeModal()">&times;</span>
+        <h2>Event Details</h2>
+        <p id="eventDetails"></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="Dashboard.js"></script>
+</body>
+</html>

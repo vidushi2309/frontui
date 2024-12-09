@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Assistance</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styles for the Request Assistance page */
+
+    main {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px;
+    }
+
+    #assistance-form {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    #assistance-form label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    #assistance-form select,
+    #assistance-form textarea,
+    #assistance-form button {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    #assistance-form textarea {
+      height: 150px;
+      resize: none;
+    }
+
+    #assistance-form button {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    #assistance-form button:hover {
+      background-color: #0056b3;
+    }
+
+    .coach-list {
+      flex: 0.5;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .coach-list h3 {
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+
+    .coach {
+      margin-bottom: 20px;
+    }
+
+    .coach-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .coach-details {
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="Dashboard.html">Dashboard</a></li>
+        <li><a href="events.html">Upcoming Events</a></li>
+        <li><a href="performance.html">Performance</a></li>
+        <li><a href="leaderboard.html">Leaderboard</a></li>
+        <li><a href="assistance.html">Request Assistance</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a href="training-schedule.html">Training Schedule</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- Assistance Form -->
+    <form id="assistance-form">
+      <h2>Request Assistance</h2>
+      <label for="coach">Select a Coach:</label>
+      <select id="coach" required>
+        <option value="">-- Select a Coach --</option>
+        <option value="1">Coach A</option>
+        <option value="2">Coach B</option>
+      </select>
+      <label for="message">Message:</label>
+      <textarea id="message" placeholder="Describe your request" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Sample Coaches List -->
+    <div class="coach-list">
+      <h3>Our Coaches</h3>
+      <div class="coach">
+        <div class="coach-name">Coach A</div>
+        <div class="coach-details">Sport: Running<br>Experience: 10 years</div>
+      </div>
+      <div class="coach">
+        <div class="coach-name">Coach B</div>
+        <div class="coach-details">Sport: Swimming<br>Experience: 8 years</div>
+      </div>
+      <div class="coach">
+        <div class="coach-name">Coach C</div>
+        <div class="coach-details">Sport: Cycling<br>Experience: 7 years</div>
+      </div>
+    </div>
+  </main>
+  <script>
+    // JavaScript to handle form submission
+    document.getElementById("assistance-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const coach = document.getElementById("coach").value;
+      const message = document.getElementById("message").value;
+
+      if (!coach || !message) {
+        alert("Please fill in all fields.");
+        return;
+      }
+
+      alert("Your request has been submitted successfully!");
+      document.getElementById("assistance-form").reset();
+    });
+  </script>
+</body>
+</html>
